@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "FoodSafariDataBase";
-    public static final String TABLE_NAME = "Resturant";
+    public static final String TABLE_NAME = "Restaurant";
     public static final String Col_1 = "Rest_ID";
     public static final String Col_2 = "Rest_Name";
     public static final String Col_3 = "Rest_Address";

@@ -7,7 +7,7 @@
     tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/user_nameTV"
         android:layout_width="88dp"
         android:layout_height="37dp"
         android:layout_marginStart="26dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/passwordTV"
         android:layout_width="90dp"
         android:layout_height="33dp"
         android:layout_marginStart="27dp"
@@ -26,7 +26,7 @@
         android:layout_marginTop="50dp"
         android:text="Password:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/user_nameTV" />
 
     <EditText
         android:id="@+id/editText"
@@ -38,7 +38,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/user_nameTV"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <EditText
@@ -51,11 +51,11 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="password"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/passwordTV"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Sign_In_BTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="145dp"

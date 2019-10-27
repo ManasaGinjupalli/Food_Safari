@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myFoodSafari = new DatabaseOfFoodSafari(this);
-        b= (Button)findViewById(R.id.MainBTN);
+        b= (Button)findViewById(R.id.LoginBTN);
 
         b.setOnClickListener(new View.OnClickListener() {
 

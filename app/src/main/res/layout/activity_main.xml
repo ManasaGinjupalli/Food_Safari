@@ -7,7 +7,20 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/MainBTN"
+        android:id="@+id/SignUpBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#0288D1"
+        android:text="Sign Up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.66" />
+
+    <Button
+        android:id="@+id/LoginBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#F57C00"

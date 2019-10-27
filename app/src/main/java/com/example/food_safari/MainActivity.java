@@ -9,8 +9,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseOfFoodSafari myFoodSafari;
-    Button b;
-    Intent b1;
+    Button loginBtn, signBTN;
+    Intent b1,b2;
 
 
     @Override
@@ -18,14 +18,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myFoodSafari = new DatabaseOfFoodSafari(this);
-        b= (Button)findViewById(R.id.LoginBTN);
+        loginBtn = findViewById(R.id.LoginBTN);
 
-        b.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                b1 = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(b1);
+
+            }
+        });
+
+
+        signBTN = findViewById(R.id.SignUpBTN);
+
+        signBTN.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                b2 = new Intent(MainActivity.this, Sign_Up.class);
+                startActivity(b2);
 
             }
         });

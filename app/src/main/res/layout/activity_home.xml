@@ -30,7 +30,7 @@
             android:textSize="14dip" />
 
         <Button
-            android:id="@+id/indBtn"
+            android:id="@+id/IndBtn"
             android:layout_width="217dp"
             android:layout_height="100dp"
             android:layout_row="0"

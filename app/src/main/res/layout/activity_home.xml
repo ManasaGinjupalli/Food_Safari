@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+
+    <GridLayout
+        android:id="@+id/favorites_grid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#00ff00"
+        android:columnCount="8"
+        android:rowCount="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/medbtn"
+            android:layout_width="217dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:padding="10dp"
+            android:text="MEDITERRANEAN"
+            android:textSize="14dip" />
+
+        <Button
+            android:id="@+id/IndBtn"
+            android:layout_width="217dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:padding="10dp"
+            android:text="INDIAN"
+            android:textSize="14dip" />
+
+        <Button
+            android:id="@+id/chinesebtn"
+            android:layout_width="217dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="CHINESE"
+            android:textSize="14dip" />
+
+        <Button
+            android:id="@+id/mongolbtn"
+            android:layout_width="217dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:text="MONGOLIAN"
+            android:textSize="14dip" />
+
+        <Button
+            android:id="@+id/mexicanbtn"
+            android:layout_width="217dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:text="MEXICAN"
+            android:textSize="14dip" />
+
+        <Button
+            android:id="@+id/japnbtn"
+            android:layout_width="217dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:text="JAPANESE"
+            android:textSize="14dip" />
+
+        <Button
+            android:id="@+id/splDishbtn"
+            android:layout_width="217dp"
+            android:layout_height="100dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:text="SPECIAL DISHES"
+            android:textSize="14dip" />
+
+        <Button
+            android:id="@+id/splOfferBtn"
+            android:layout_width="217dp"
+            android:layout_height="100dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:text="SPECIAL OFFERS"
+            android:textSize="14dip" />
+
+        <Button
+            android:layout_width="217dp"
+            android:layout_height="100dp"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:text="Tracking"
+            android:textSize="14dip" />
+    </GridLayout>
+
+    <Button
+        android:id="@+id/backBTN"
+        android:layout_width="96dp"
+        android:layout_height="40dp"
+        android:background="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

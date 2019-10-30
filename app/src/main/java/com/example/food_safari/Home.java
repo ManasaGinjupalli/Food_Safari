@@ -7,40 +7,33 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
-    Button signIn, create;
+public class Home extends AppCompatActivity {
+    Button medBTN, mongBTN, indBTN, MexiBTN, splOfBTN, splDish, trackBTN, bckBtn;
     Intent b1, b2;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        signIn = findViewById(R.id.Sign_In_BTN);
-
-        signIn.setOnClickListener(new View.OnClickListener() {
-
+        setContentView(R.layout.activity_home);
+        medBTN = findViewById(R.id.medbtn);
+        medBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                b1 = new Intent(LoginActivity.this, Home.class);
+                b1 = new Intent(Home.this, Restaurant.class);
                 startActivity(b1);
 
             }
         });
-        create = findViewById(R.id.createbtn);
-        create.setOnClickListener(new View.OnClickListener() {
+        bckBtn = findViewById(R.id.backBTN);
+        bckBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                b2 = new Intent(LoginActivity.this, Sign_Up.class);
+                b2 = new Intent(Home.this, LoginActivity.class);
                 startActivity(b2);
             }
         });
 
+
     }
-
-
-
-
 
 }

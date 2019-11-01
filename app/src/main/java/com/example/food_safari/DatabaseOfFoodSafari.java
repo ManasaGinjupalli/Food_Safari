@@ -15,7 +15,6 @@ public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
     public static final String Col_4 = "Rest_Availability";
 
 
-
     public DatabaseOfFoodSafari(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
         SQLiteDatabase db = this.getWritableDatabase();
@@ -23,14 +22,14 @@ public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create Table "+TABLE_NAME + " (Rest_ID INTEGER PRIMARY KEY AUTOINCREMENT, Rest_Name TEXT, Rest_Adress TEXT, Rest_Availability TEXT )" );
+        db.execSQL("Create Table " + TABLE_NAME + " (Rest_ID INTEGER PRIMARY KEY AUTOINCREMENT, Rest_Name TEXT, Rest_Adress TEXT, Rest_Availability TEXT )");
 
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(" Drop Table "+TABLE_NAME);
+        db.execSQL(" Drop Table " + TABLE_NAME);
         onCreate(db);
 
     }

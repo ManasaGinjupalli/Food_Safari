@@ -1,8 +1,8 @@
 package com.example.food_safari;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Cart extends AppCompatActivity {
 

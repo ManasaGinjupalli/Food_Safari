@@ -28,6 +28,7 @@
             android:layout_height="100dp"
             android:layout_row="0"
             android:layout_column="0"
+            android:background="@android:color/holo_blue_light"
             android:padding="10dp"
             android:text="MEDITERRANEAN"
             android:textSize="14dip" />
@@ -38,6 +39,7 @@
             android:layout_height="100dp"
             android:layout_row="0"
             android:layout_column="1"
+            android:background="@android:color/holo_orange_light"
             android:padding="10dp"
             android:text="INDIAN"
             android:textSize="14dip" />
@@ -48,6 +50,7 @@
             android:layout_height="100dp"
             android:layout_row="1"
             android:layout_column="0"
+            android:background="@android:color/holo_orange_dark"
             android:text="CHINESE"
             android:textSize="14dip" />
 

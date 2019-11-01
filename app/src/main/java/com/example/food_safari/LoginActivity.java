@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,6 +27,15 @@ public class LoginActivity extends AppCompatActivity {
                 b1 = new Intent(LoginActivity.this, Home.class);
                 startActivity(b1);
 
+            }
+        });
+
+        ImageButton backBTN = findViewById(R.id.imageButton);
+        backBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backIntent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(backIntent);
             }
         });
         create = findViewById(R.id.createbtn);

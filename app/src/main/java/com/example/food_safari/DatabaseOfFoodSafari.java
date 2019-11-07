@@ -13,7 +13,7 @@ public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
     private static final String Col_2 = "Res_Name";
     private static final String Col_3 = "Res_Address";
     private static final String Col_4 = "Res_Availability";
-    private static final String TABLE_NAME2 = "Order";
+    private static final String TABLE_NAME2 = "Restaurant_Order";
     private static final String Col_5 = "Order_ID";
     private static final String Col_6 = "Res_ID";
     private static final String Col_7 = "Cust_ID";
@@ -57,9 +57,8 @@ public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
             + " TEXT," + Col_3 + " TEXT," + Col_4 + " TEXT" + ")";
 
 
-    private static final String CREATE_ORDER = "CREATE TABLE "
-            + TABLE_NAME2 + "(" + Col_5 + " INTEGER PRIMARY KEY AUTOINCREMENT," + Col_6
-            + " INTEGER," +  Col_7 + " INTEGER" + ")";
+    private static final String CREATE_ORDER = "Create table " + TABLE_NAME2 + "(" + Col_5 + " INTEGER PRIMARY KEY," + Col_6
+            + " INTEGER," +  Col_7 + " INTEGER)";
 
     private static final String CREATE_PAYMENT = "CREATE TABLE "
             + TABLE_NAME3 + "(" + Col_8 + " INTEGER PRIMARY KEY AUTOINCREMENT," + Col_9

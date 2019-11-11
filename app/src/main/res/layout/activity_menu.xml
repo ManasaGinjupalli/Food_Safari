@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="43dp"
-        android:background="#104E10"
+        android:background="#00ff00"
         android:columnCount="8"
         android:rowCount="8"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,6 @@
             android:layout_height="100dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:background="#1976D2"
             android:padding="10dp"
             android:text="Pasta"
             android:textSize="14dip" />
@@ -36,7 +35,6 @@
             android:layout_height="100dp"
             android:layout_row="0"
             android:layout_column="1"
-            android:background="#E91E63"
             android:padding="10dp"
             android:text="Pepperoni Pizza"
             android:textSize="14dip" />

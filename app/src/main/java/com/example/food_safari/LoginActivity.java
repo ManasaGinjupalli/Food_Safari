@@ -54,3 +54,41 @@ public class LoginActivity extends AppCompatActivity {
 
 
 }
+class User{
+    private int User_ID;
+    private String User_Name;
+    private String User_Email;
+    private String User_Password;
+
+    public int getUser_ID() {
+        return User_ID;
+    }
+
+    public void setUser_Password(String user_Password) {
+        this.User_Email = user_Password;
+    }
+
+    public void setUser_Email(String user_Email) {
+        this.User_Email = user_Email;
+    }
+
+    public void setUser_Name(String user_Name) {
+        this.User_Name = user_Name;
+    }
+
+    public void setUser_ID(int user_ID) {
+        this.User_ID = user_ID;
+    }
+
+    public String getUser_Password() {
+        return User_Password;
+    }
+
+    public String getUser_Email() {
+        return User_Email;
+    }
+
+    public String getUser_Name() {
+        return User_Name;
+    }
+}

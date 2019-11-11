@@ -1,10 +1,15 @@
 package com.example.food_safari;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "FoodSafariDataBase";
@@ -45,6 +50,15 @@ public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
     private static final String Col_27 = "Item_Name";
     private static final String Col_28 = "Item_Description";
     private static final String Col_29 = "Price";
+    private static final String TABLE_NAME9 = "User";
+    private static final String Col_30 = "User_ID";
+    private static final String Col_31 = "User_Name";
+    private static final String Col_32 = "User_Email";
+    private static final String Col_33 = "User_Password";
+    private static final String Col_34 = "Cust_ID";
+
+
+
 
 
     public DatabaseOfFoodSafari(@Nullable Context context) {
@@ -87,6 +101,11 @@ public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
             + " INTEGER," + Col_27 + " TEXT," + Col_28
             + " TEXT" +  Col_29 + "INTEGER" + ")";
 
+    private static final String CREATE_USER = "CREATE TABLE "
+            + TABLE_NAME9 + "(" + Col_30 + " INTEGER PRIMARY KEY AUTOINCREMENT," + Col_31
+            + " TEXT," + Col_32 + " TEXT," + Col_33
+            + " TEXT" + Col_34 + "INTEGER"  + ")";
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_RESTAURANT);
@@ -97,6 +116,7 @@ public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
         db.execSQL(CREATE_CUSTOMER);
         db.execSQL(CREATE_MENU);
         db.execSQL(CREATE_FOOD_ITEM);
+        db.execSQL(CREATE_USER);
     }
 
 
@@ -111,7 +131,72 @@ public class DatabaseOfFoodSafari extends SQLiteOpenHelper {
         db.execSQL(" DROP TABLE IF EXISTS CREATE_CUSTOMER ");
         db.execSQL(" DROP TABLE IF EXISTS CREATE_MENU " );
         db.execSQL(" DROP TABLE IF EXISTS CREATE_FOOD_ITEM ");
+        db.execSQL(" DROP TABLE IF EXISTS CREATE_USER " );
+
         onCreate(db);
 
     }
+
+    public void addUser(User user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(Col_31, user.getUser_Name());
+        values.put(Col_32, user.getUser_Email());
+        values.put(Col_33, user.getUser_Password());
+
+        // Inserting Row
+        db.insert(TABLE_NAME9, null, values);
+        db.close();
+    }
+
+    public List<User> getAllUser() {
+        // array of columns to fetch
+        String[] columns = {
+                Col_30,
+                Col_31,
+                Col_32,
+                Col_33
+        };
+        // sorting orders
+        String sortOrder =
+                Col_31 + " ASC";
+        List<User> userList = new ArrayList<User>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // query the user table
+        /**
+         * Here query function is used to fetch records from user table this function works like we use sql query.
+         * SQL query equivalent to this query function is
+         * SELECT user_id,user_name,user_email,user_password FROM user ORDER BY user_name;
+         */
+        Cursor cursor = db.query(TABLE_NAME9, //Table to query
+                columns,    //columns to return
+                null,        //columns for the WHERE clause
+                null,        //The values for the WHERE clause
+                null,       //group the rows
+                null,       //filter by row groups
+                sortOrder); //The sort order
+
+
+        // Traversing through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                User user = new User();
+                user.setUser_ID(Integer.parseInt(cursor.getString(cursor.getColumnIndex(Col_30))));
+                user.setUser_Name(cursor.getString(cursor.getColumnIndex(Col_31)));
+                user.setUser_Email(cursor.getString(cursor.getColumnIndex(Col_32)));
+                user.setUser_Password(cursor.getString(cursor.getColumnIndex(Col_33)));
+                // Adding user record to list
+                userList.add(user);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        // return user list
+        return userList;
+    }
+
 }

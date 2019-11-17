@@ -7,23 +7,11 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="43dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/back" />
-
     <TextView
-        android:id="@+id/user_nameTV"
+        android:id="@+id/login_username_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="User Name:"
+        android:text="@string/enter_username"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,24 +22,25 @@
         app:layout_constraintVertical_bias="0.329" />
 
     <EditText
-        android:id="@+id/user_nameET"
+        android:id="@+id/login_username_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="User name"
+        android:hint="@string/enter_username"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322" />
+        app:layout_constraintVertical_bias="0.322"
+        android:autofillHints="" />
 
     <TextView
-        android:id="@+id/passwordTV"
+        android:id="@+id/login_password_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password:"
+        android:text="@string/enter_password"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,11 +51,11 @@
         app:layout_constraintVertical_bias="0.425" />
 
     <EditText
-        android:id="@+id/passwordET"
+        android:id="@+id/login_password_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/enter_password"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,10 +65,10 @@
         app:layout_constraintVertical_bias="0.421" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/login_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Remember Me!"
+        android:text="@string/rememberme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -88,12 +77,12 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <Button
-        android:id="@+id/Sign_In_BTN"
+        android:id="@+id/login_signin_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@android:color/holo_blue_dark"
-        android:text="Sign in"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -102,20 +91,20 @@
         app:layout_constraintVertical_bias="0.582" />
 
     <TextView
-        android:id="@+id/orTV"
+        android:id="@+id/or_display_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="or"
+        android:text="@string/or_display"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/createbtn"
+        android:id="@+id/login_create_acc_btn"
         android:layout_width="187dp"
         android:layout_height="43dp"
         android:layout_gravity="center"
         android:background="@android:color/holo_green_light"
-        android:text="Create Account"
+        android:text="@string/create_acc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

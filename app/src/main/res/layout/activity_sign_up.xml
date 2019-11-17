@@ -39,7 +39,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/passwordTV"
+        android:id="@+id/login_password_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
@@ -47,7 +47,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/passwordET"
+        android:id="@+id/login_password_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

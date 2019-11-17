@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        signIn = findViewById(R.id.Sign_In_BTN);
+        signIn = findViewById(R.id.login_signin_btn);
 
         signIn.setOnClickListener(new View.OnClickListener() {
 
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(backIntent);
             }
         });
-        create = findViewById(R.id.createbtn);
+        create = findViewById(R.id.login_create_acc_btn);
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,49 +46,5 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(b2);
             }
         });
-
-    }
-
-
-
-
-
-}
-class User{
-    private int User_ID;
-    private String User_Name;
-    private String User_Email;
-    private String User_Password;
-
-    public int getUser_ID() {
-        return User_ID;
-    }
-
-    public void setUser_Password(String user_Password) {
-        this.User_Email = user_Password;
-    }
-
-    public void setUser_Email(String user_Email) {
-        this.User_Email = user_Email;
-    }
-
-    public void setUser_Name(String user_Name) {
-        this.User_Name = user_Name;
-    }
-
-    public void setUser_ID(int user_ID) {
-        this.User_ID = user_ID;
-    }
-
-    public String getUser_Password() {
-        return User_Password;
-    }
-
-    public String getUser_Email() {
-        return User_Email;
-    }
-
-    public String getUser_Name() {
-        return User_Name;
     }
 }

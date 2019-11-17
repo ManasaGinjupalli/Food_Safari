@@ -37,7 +37,7 @@
             android:layout_column="1"
             android:padding="10dp"
             android:text="Pepperoni Pizza"
-            android:textSize="14dip" />
+            android:textSize="16dip" />
 
 
     </GridLayout>

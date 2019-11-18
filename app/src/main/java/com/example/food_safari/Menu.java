@@ -7,9 +7,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+
 public class Menu extends AppCompatActivity {
     Button pastaBTN, peproniBTN, back;
     Intent b1, b2, b3;
+    FirebaseAuth mFirebaseAuth;
+    DatabaseReference reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

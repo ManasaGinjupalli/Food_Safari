@@ -36,6 +36,7 @@
             android:layout_height="100dp"
             android:layout_row="0"
             android:layout_column="1"
+            android:background="#899233"
             android:padding="11dp"
             android:text="Pepperoni Pizza"
             android:textSize="16dip" />

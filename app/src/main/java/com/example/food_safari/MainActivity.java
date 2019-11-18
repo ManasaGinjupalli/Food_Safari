@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    DatabaseOfFoodSafari myFoodSafari;
+
     Button loginBtn, signBTN;
     Intent b1, b2;
 
@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myFoodSafari = new DatabaseOfFoodSafari(this);
         loginBtn = findViewById(R.id.LoginBTN);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {

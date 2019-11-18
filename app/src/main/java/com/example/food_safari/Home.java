@@ -22,6 +22,8 @@ public class Home extends AppCompatActivity {
                 b1 = new Intent(Home.this, Restaurant.class);
                 startActivity(b1);
 
+
+
             }
         });
         backBTN = findViewById(R.id.backBTN);

@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Home extends AppCompatActivity {
-    Button medBTN, mongBTN, indBTN, MexiBTN, splOfBTN, splDish, trackBTN, bckBtn;
+    Button medBTN, mongBTN, indBTN, MexiBTN, splOfBTN, splDish, trackBTN, backBTN;
     Intent b1, b2;
 
     @Override
@@ -26,8 +26,8 @@ public class Home extends AppCompatActivity {
 
             }
         });
-        bckBtn = findViewById(R.id.backBTN);
-        bckBtn.setOnClickListener(new View.OnClickListener() {
+        backBTN = findViewById(R.id.backBTN);
+        backBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 b2 = new Intent(Home.this, LoginActivity.class);

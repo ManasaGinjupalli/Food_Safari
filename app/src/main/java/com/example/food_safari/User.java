@@ -1,61 +1,64 @@
 package com.example.food_safari;
 
+//Storing the user details to the Firebase database
 public class User {
-
-    public String fname;
-    public String email;
-    public String password;
-    public String address;
-    public String number;
+    private String name,email,password,address,phonenumber;
 
 
-    public User(String fname, String email, String password, String address, String number) {
+    public User() {
+    }
 
-        this.fname = fname;
+    public User(String name, String email, String password, String address, String phonenumber) {
+        this.name = name;
         this.email = email;
         this.password = password;
         this.address = address;
-        this.number = number;
+        this.phonenumber = phonenumber;
+
     }
 
-    public String getFname() {
-        return fname;
-    }
-
-    public void setFname(String fname) {
-        this.fname = fname;
+    //getter methods helps to get the data from the firebase
+    public String getName() {
+        return name;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getAddress() {
         return address;
     }
 
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getNumber() {
-        return number;
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
 }
 

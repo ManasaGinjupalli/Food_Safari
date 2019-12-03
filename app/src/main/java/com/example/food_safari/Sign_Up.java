@@ -81,13 +81,14 @@ public class Sign_Up extends AppCompatActivity {
                                 String number = phonenum.getText().toString();
                                 reff = FirebaseDatabase.getInstance().getReference().child("details").child(user_id);
 
-                                User userdetails = new User(fname, email, pwd, adds, number);
+                                //String name, String email, String password, String address, String phonenumber
+                                reff.setValue(new User(fname, email, pwd, adds, number));
+
                                 fullName.setText("");
                                 address.setText("");
                                 phonenum.setText("");
                                 emailId.setText("");
                                 password.setText("");
-                                reff.setValue(userdetails);
 
 
                                 startActivity(new Intent(Sign_Up.this, LoginActivity.class));

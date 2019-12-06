@@ -29,14 +29,14 @@ public class Sign_Up extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_signup);
 
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         emailId = findViewById(R.id.EmailET);
-        password = findViewById(R.id.login_password_et);
+        password = findViewById(R.id.passwordET);
         fullName = findViewById(R.id.NameET);
-        address = findViewById(R.id.EditAddressET);
+        address = findViewById(R.id.EditAddressTV);
         phonenum = findViewById(R.id.phoneET);
         btnSignUp = findViewById(R.id.RegisterBTN);
 

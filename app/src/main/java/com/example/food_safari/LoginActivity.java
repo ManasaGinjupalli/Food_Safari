@@ -30,9 +30,9 @@ public class LoginActivity extends AppCompatActivity {
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         emailId = findViewById(R.id.loginEmail);
-        password = findViewById(R.id.loginPassword);
-        btnSignUp = findViewById(R.id.ForgotBTN);
-        loginBTN = findViewById(R.id.loginBTN);
+        password = findViewById(R.id.loginpassword);
+//        btnSignUp = findViewById(R.id.ForgotBTN);
+        loginBTN = findViewById(R.id.userLoginBTN);
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override

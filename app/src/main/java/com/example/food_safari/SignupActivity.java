@@ -1,7 +1,9 @@
 package com.example.food_safari;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -66,26 +69,52 @@ public class SignupActivity extends AppCompatActivity {
                                 Toast.makeText(SignupActivity.this, "Not successful", Toast.LENGTH_SHORT).show();
                             } else {
                                 //getting the values from the edittext to store the values
-                                String name = nameET.getText().toString();
-                                String password = pwd.getText().toString();
-                                String emailid = email.getText().toString();
-                                String phone = phno.getText().toString();
-                                String addr = address.getText().toString();
-                                Log.d("users",""+name+password+phone+addr);
-                                //getting the user-id which is same as current user
-                                String user_id= mFirebaseAuth.getCurrentUser().getUid();
-                                //connecting the database reference
-                                databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
-                                UserData userData = new UserData( name, emailid, password, addr, phone);
-                                nameET.setText("");
-                                pwd.setText("");
-                                email.setText("");
-                                phno.setText("");
-                                address.setText("");
-                                databaseReference.setValue(userData);
-                                Toast.makeText(getApplicationContext(), "Account Created", Toast.LENGTH_SHORT).show();
-                                Intent b1 = new Intent(SignupActivity.this, LoginActivity.class);
-                                startActivity(b1);
+                                FirebaseAuth auth = FirebaseAuth.getInstance();
+                                FirebaseUser user = auth.getCurrentUser();
+
+                                user.sendEmailVerification()
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    final ProgressDialog csprogress=new ProgressDialog(SignupActivity.this);
+
+                                                    csprogress.setMessage("Loading...");
+                                                    csprogress.show();
+                                                    new Handler().postDelayed(new Runnable() {
+
+                                                        @Override
+                                                        public void run() {
+                                                            csprogress.dismiss();
+//whatever you want just you have to launch overhere.
+
+
+                                                        }
+                                                    }, 1000);
+                                                    Log.d("", "Email sent.");
+                                                    String name = nameET.getText().toString();
+                                                    String password = pwd.getText().toString();
+                                                    String emailid = email.getText().toString();
+                                                    String phone = phno.getText().toString();
+                                                    String addr = address.getText().toString();
+                                                    Log.d("users",""+name+password+phone+addr);
+                                                    //getting the user-id which is same as current user
+                                                    String user_id= mFirebaseAuth.getCurrentUser().getUid();
+                                                    //connecting the database reference
+                                                    databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
+                                                    UserData userData = new UserData( name, emailid, password, addr, phone);
+                                                    nameET.setText("");
+                                                    pwd.setText("");
+                                                    email.setText("");
+                                                    phno.setText("");
+                                                    address.setText("");
+                                                    databaseReference.setValue(userData);
+                                                    Toast.makeText(getApplicationContext(), "Account Created", Toast.LENGTH_SHORT).show();
+                                                    Intent b1 = new Intent(SignupActivity.this, LoginActivity.class);
+                                                    startActivity(b1);
+                                                }
+                                            }
+                                        });
                             }
                         }
                     });

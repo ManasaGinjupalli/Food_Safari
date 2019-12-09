@@ -3,6 +3,7 @@ package com.example.food_safari;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -73,25 +75,37 @@ public class Sign_Up extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(Sign_Up.this, "SignUp Unsuccessful, Please Try Again", Toast.LENGTH_SHORT).show();
                             } else {
-                                String user_id = mFirebaseAuth.getCurrentUser().getUid();
-                                String email = emailId.getText().toString();
-                                String pwd = password.getText().toString();
-                                String fname = fullName.getText().toString();
-                                String adds = address.getText().toString();
-                                String number = phonenum.getText().toString();
-                                reff = FirebaseDatabase.getInstance().getReference().child("details").child(user_id);
+                                FirebaseUser user = mFirebaseAuth.getCurrentUser();
 
-                                //String name, String email, String password, String address, String phonenumber
-                                reff.setValue(new User(fname, email, pwd, adds, number));
+                                user.sendEmailVerification()
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Log.d("", "Email sent.");
+                                                    String user_id = mFirebaseAuth.getCurrentUser().getUid();
+                                                    String email = emailId.getText().toString();
+                                                    String pwd = password.getText().toString();
+                                                    String fname = fullName.getText().toString();
+                                                    String adds = address.getText().toString();
+                                                    String number = phonenum.getText().toString();
+                                                    reff = FirebaseDatabase.getInstance().getReference().child("details").child(user_id);
 
-                                fullName.setText("");
-                                address.setText("");
-                                phonenum.setText("");
-                                emailId.setText("");
-                                password.setText("");
+                                                    //String name, String email, String password, String address, String phonenumber
+                                                    reff.setValue(new User(fname, email, pwd, adds, number));
+
+                                                    fullName.setText("");
+                                                    address.setText("");
+                                                    phonenum.setText("");
+                                                    emailId.setText("");
+                                                    password.setText("");
 
 
-                                startActivity(new Intent(Sign_Up.this, LoginActivity.class));
+                                                    startActivity(new Intent(Sign_Up.this, LoginActivity.class));
+                                                }
+                                            }
+                                        });
+
                             }
                         }
                     });

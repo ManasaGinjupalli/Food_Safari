@@ -36,11 +36,20 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.loginpassword);
 //        btnSignUp = findViewById(R.id.ForgotBTN);
         loginBTN = findViewById(R.id.userLoginBTN);
+
+        TextView forgotTV=findViewById(R.id.forgotTV);
+        forgotTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,ForgotPassword.class));
+            }
+        });
+
         createBTN= findViewById(R.id.link_signup);
         createBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,Sign_Up.class));
+                startActivity(new Intent(LoginActivity.this,SignupActivity.class));
             }
         });
 
@@ -94,9 +103,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void Signup_fun(View v) {
-        Intent intent1 = new Intent(this, Sign_Up.class);
-        startActivity(intent1);
-    }
+
 
 }

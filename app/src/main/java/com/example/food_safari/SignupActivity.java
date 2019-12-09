@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -44,6 +45,14 @@ public class SignupActivity extends AppCompatActivity {
         phno = findViewById(R.id.phoneET);
         address = findViewById(R.id.EditAddressTV);
         email = findViewById(R.id.EmailET);
+        TextView loginBTN =findViewById(R.id.link_signin);
+        loginBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignupActivity.this,LoginActivity.class));
+            }
+        });
+
         Button RegisterBTN = findViewById(R.id.RegisterBTN);
         RegisterBTN.setOnClickListener(new View.OnClickListener() {
             @Override

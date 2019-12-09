@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,8 @@ public class LoginActivity extends AppCompatActivity {
     Button btnSignUp;
     Button loginBTN;
     FirebaseAuth mFirebaseAuth;
+    TextView createBTN;
+
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
@@ -33,6 +36,13 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.loginpassword);
 //        btnSignUp = findViewById(R.id.ForgotBTN);
         loginBTN = findViewById(R.id.userLoginBTN);
+        createBTN= findViewById(R.id.link_signup);
+        createBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,Sign_Up.class));
+            }
+        });
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override

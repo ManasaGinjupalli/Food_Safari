@@ -13,5 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cart is empty"
-        android:textSize="24sp" />
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/Edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add or Delete Items"
+        android:text="Edit" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue to checkout" />
+
+
 </LinearLayout>
